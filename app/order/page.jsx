@@ -6,18 +6,24 @@ export default async function CoffeesDisplay() {
     const grabCoffees = await fetchCoffees()
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-white to-black text-black flex flex-col lg:flex-row lg:flex-wrap items-center">
-            {grabCoffees ?
-                grabCoffees.map((coff) => (
-                    <div className="h-screen lg:w-1/4 flex flex-col justify-center" key={coff.id}>
-                        <div className="text-center p-8">
-                            <Image className="rounded-lg" src={coff.image} height={400} width={400} />
-                            <h1 className="text-2xl py-2 font-light">{coff.title}</h1>
+        <div className="min-h-screen bg-white text-black ">
+            <div >
+                <h1 className="text-2xl p-12 font-bold ">Coffees and Drinks</h1>
+            </div>
+            <div className="flex  flex-col lg:flex-row lg:flex-wrap items-center">
+                {grabCoffees ?
+                    grabCoffees.map((coff) => (
+                        <div className=" lg:w-1/4  flex flex-col justify-center" key={coff.id}>
+                            <div className="text-center p-8">
+                                <Image className="rounded-full h-60 w-60 lg:w-80 lg:h-80" src={coff.image} height={200} width={400} />
+                                <h1 className="text-xl py-2 font-light">{coff.title}</h1>
+                            </div>
                         </div>
-                    </div>
-                )) :
-                <h1>Loading..</h1>
-            }
+                    )) :
+                    <h1>Loading..</h1>
+                }
+            </div>
+
         </div>
     )
 }
