@@ -5,7 +5,7 @@ export default async function CoffeesDisplay() {
     const grabCoffees = await fetchCoffees()
     console.log(grabCoffees, "@@")
     return (
-        <div className="flex flex-col items-center">
+        <div className=" flex flex-col items-center">
             {grabCoffees ?
                 grabCoffees.map((coff) => (
                     <div className="min-h-screen flex flex-col justify-center" key={coff.id}>
