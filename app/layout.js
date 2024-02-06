@@ -3,6 +3,7 @@ import "./globals.css";
 import Navigation from "@/components/navigation/Navigation";
 import LandingPage from "@/components/landing/LandingPage";
 import BackgroundImage from "@/components/BackgroundImg";
+import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Navigation />
         {children}
+        <Footer />
       </body>
     </html>
   );
