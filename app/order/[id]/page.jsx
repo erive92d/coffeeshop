@@ -5,7 +5,7 @@ export async function generateStaticParams() {
     const fetchDrinks = await fetch('https://api.sampleapis.com/coffee/hot')
     const drinks = await fetchDrinks.json()
     return drinks.map((coffee) => ({
-        id: coffee.id,
+        id: coffee.id.toString(),
     }))
 }
 
@@ -18,13 +18,12 @@ export async function fetchSingleDrink(id) {
             }
         }
     );
-    const data = await resp.json();
-    return data
+    return await resp.json();
+
 }
 
-export default async function page({ params: { id } }) {
-    console.log(id, "pp")
-    const singleDrink = await fetchSingleDrink(id)
+export default async function page({ params }) {
+    const singleDrink = await fetchSingleDrink(params.id)
 
     return (
         <div>
