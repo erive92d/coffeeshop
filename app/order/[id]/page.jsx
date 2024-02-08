@@ -10,7 +10,6 @@ export async function generateStaticParams() {
 }
 
 export async function fetchSingleDrink(id) {
-
     const resp = await fetch(`https://api.sampleapis.com/coffee/hot/${id}`,
         {
             next: {
