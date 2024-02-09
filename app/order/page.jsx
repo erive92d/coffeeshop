@@ -1,6 +1,7 @@
 import ViewInfo from "@/components/ViewInfo"
 import { fetchCoffees } from "@/helpers/apicalls/fetchCoffees"
 import Image from "next/image"
+import Link from "next/link"
 
 export default async function CoffeesDisplay() {
     const grabCoffees = await fetchCoffees()
@@ -14,14 +15,14 @@ export default async function CoffeesDisplay() {
             <div className="flex  flex-col lg:flex-row lg:flex-wrap items-center">
                 {grabCoffees ?
                     grabCoffees.map((coff) => (
-                        <div className=" lg:w-1/4  flex flex-col justify-center items-center" key={coff.id}>
+                        <Link href={`/order/${coff.id}`} className=" lg:w-1/4  flex flex-col justify-center" key={coff.id}>
                             <div className="text-center p-8">
                                 <Image alt="image" className="rounded-full h-60 w-60 lg:w-80 lg:h-80 border-4 border-black" src={coff.image} height={200} width={400} />
                                 <h1 className="text-xl py-2 font-light">
                                   {coff.title}
                                 </h1>
                             </div>
-                        </div>
+                        </Link>
                     )) :
                     <h1>Loading..</h1>
                 }
