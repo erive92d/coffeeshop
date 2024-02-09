@@ -6,11 +6,12 @@ const BackgroundImage = ({ imageUrl, children }) => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
+        
 
     };
 
     return (
-        <div className={`min-h-screen`} style={backgroundStyle}>
+        <div className={`min-h-screen `} style={backgroundStyle}>
             {children}
         </div>
     );
