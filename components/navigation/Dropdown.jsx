@@ -20,7 +20,7 @@ export default function Dropdown() {
     return (
         <div className='lg:hidden'>
             <Button
-                className={` ${open ? " rotate-180 transition-all duration-200 text-white" : "text-white"}`}
+                className={` ${open ? " rotate-180 transition-all duration-200 text-gray-500" : "text-gray-500"}`}
                 id="basic-button"
                 aria-controls={open ? 'basic-menu' : undefined}
                 aria-haspopup="true"
