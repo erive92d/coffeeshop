@@ -1,4 +1,3 @@
-import ViewInfo from "@/components/ViewInfo"
 import { fetchCoffees } from "@/helpers/apicalls/fetchCoffees"
 import Image from "next/image"
 import Link from "next/link"
