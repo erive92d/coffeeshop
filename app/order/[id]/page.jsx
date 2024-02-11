@@ -27,7 +27,7 @@ export default async function page({ params }) {
 
     return (
         <div className='min-h-screen bg-white flex flex-col'>
-            <div className='bg-green-950 px-6 py-4 flex flex-col  lg:flex-row justify-center items-center '>
+            <div className=' bg-stone-700 px-6 py-4 flex flex-col  lg:flex-row justify-center items-center '>
                 <div className=' w-96 space-y-4 py-4 lg:space-y-0'>
                     <h1 className='text-3xl font-bold text-white text-center lg:text-start'>{singleDrink.title}</h1>
                 </div>

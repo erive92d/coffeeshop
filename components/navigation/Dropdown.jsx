@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { useState } from 'react';
 import React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-
+import Link from 'next/link';
 
 export default function Dropdown() {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -40,7 +40,11 @@ export default function Dropdown() {
             >
                 <MenuItem onClick={handleClose}>Menu</MenuItem>
                 <MenuItem onClick={handleClose}>About</MenuItem>
-                <MenuItem onClick={handleClose}>Order</MenuItem>
+                <MenuItem onClick={handleClose}>
+                <Link href="/order">
+                        Order
+                    </Link>
+                </MenuItem>
             </Menu>
         </div>
     );

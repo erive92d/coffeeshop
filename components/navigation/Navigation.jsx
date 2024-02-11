@@ -1,6 +1,6 @@
 import React from 'react'
 import Dropdown from './Dropdown'
-
+import Link from 'next/link'
 
 
 export default function Navigation() {
@@ -8,7 +8,7 @@ export default function Navigation() {
     return (
         <div className=' text-xl flex justify-between border-b  bg-opacity-75 px-6 py-10'>
             <div>
-                <h1 className='font-bold text-2xl lg:text-4xl'>CoffeeShop</h1>
+                <Link href="/" className='font-bold text-2xl lg:text-4xl'>CoffeeShop</Link>
             </div>
             <ul className='hidden lg:flex gap-4 font-thin'>
                 <li>
@@ -18,7 +18,9 @@ export default function Navigation() {
                     About
                 </li>
                 <li>
-                    Order
+                    <Link href="/order">
+                        Order
+                    </Link>
                 </li>
             </ul>
             <Dropdown />
