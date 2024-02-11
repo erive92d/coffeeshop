@@ -1,6 +1,5 @@
-import SizeOptions from '@/components/options/SizeOptions'
+
 import WhatsIncluded from '@/components/options/WhatsIncluded'
-import { fetchCoffees } from '@/helpers/apicalls/fetchCoffees'
 import Image from 'next/image'
 
 export async function generateStaticParams() {
@@ -36,10 +35,9 @@ export default async function page({ params }) {
                     <Image alt="image" className="rounded-full h-60 w-60 lg:w-80 lg:h-80 border-black" src={singleDrink.image} height={200} width={400} />
                 </div>
             </div>
-            <div className='flex gap-6 flex-col lg:flex-row justify-around lg:w-2/3 mx-auto p-2 my-2'>
-                <SizeOptions />
-                <WhatsIncluded drink={singleDrink} />
-            </div>
+
+            <WhatsIncluded drink={singleDrink} />
+
         </div>
     )
 }
