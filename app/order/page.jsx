@@ -17,7 +17,7 @@ export default async function CoffeesDisplay() {
                     grabCoffees.map((coff) => (
                         <Link href={`/order/${coff.id}`} className=" lg:w-1/4  flex flex-col justify-center items-center" key={coff.id}>
                             <div className="text-center p-8">
-                                <Image alt="image" className="rounded-full h-60 w-60 lg:w-70 lg:h-48 border-black" src={coff.image} height={200} width={400} />
+                                <Image alt="image" className="rounded-full h-60 w-60 lg:w-60 lg:h-30 border-black" src={coff.image} height={200} width={400} />
                                 <h1 className="text-xl py-2 font-light">
                                     {coff.title}
                                 </h1>

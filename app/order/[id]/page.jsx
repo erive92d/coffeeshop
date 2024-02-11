@@ -36,7 +36,7 @@ export default async function page({ params }) {
                     <Image alt="image" className="rounded-full h-60 w-60 lg:w-80 lg:h-80 border-black" src={singleDrink.image} height={200} width={400} />
                 </div>
             </div>
-            <div className='flex justify-between w-2/3 mx-auto p-2 my-2'>
+            <div className='flex space-y-4 flex-col lg:flex-row justify-between w-2/3 mx-auto p-2 my-2'>
                 <SizeOptions />
                 <WhatsIncluded />
             </div>
