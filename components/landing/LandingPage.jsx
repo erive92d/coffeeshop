@@ -10,15 +10,10 @@ export default function LandingPage() {
 
 
     return (
-     
-            <div className=' flex flex-col min-h-screen'>
-                <div className='flex p-20 space-y-4 '>
-                     <div className='lg:w-1/2'>
-                        <Drinkoftheday/>
-                    </div>
-                </div>
-            </div>
-       
+        <div className=''>
+            <Drinkoftheday />
+        </div>
+
 
     )
 }
