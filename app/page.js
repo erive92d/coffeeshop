@@ -5,10 +5,8 @@ import Image from "next/image";
 import LandingPage from "@/components/landing/LandingPage";
 export default function Home() {
 
-  // const checkIfFirstTime = localStorage.getItem("firstTime")
-
   return (
-    <div>
+    <div className="min-h-screen px-8 py-6">
       <LandingPage />
     </div>
   );
