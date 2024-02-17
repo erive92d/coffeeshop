@@ -1,6 +1,6 @@
-
-import WhatsIncluded from '@/components/options/WhatsIncluded'
 import Image from 'next/image'
+import OrderOptions from '@/components/options/OrderOptions'
+
 
 export async function generateStaticParams() {
     const fetchDrinks = await fetch('https://api.sampleapis.com/coffee/hot')
@@ -24,7 +24,6 @@ export async function fetchSingleDrink(id) {
 
 export default async function page({ params }) {
     const singleDrink = await fetchSingleDrink(params.id)
-
     return (
         <div className='min-h-screen bg-white flex flex-col'>
             <div className=' bg-stone-700 px-6 py-4 flex flex-col  lg:flex-row justify-center items-center '>
@@ -35,9 +34,7 @@ export default async function page({ params }) {
                     <Image alt="image" className="rounded-full h-60 w-60 lg:w-80 lg:h-80 border-black" src={singleDrink.image} height={200} width={400} />
                 </div>
             </div>
-
-            <WhatsIncluded drink={singleDrink} />
-
+            <OrderOptions drink={singleDrink} />
         </div>
     )
 }
