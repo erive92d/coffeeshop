@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export default async function CoffeesDisplay() {
     const grabCoffees = await fetchCoffees()
-
+    // console.log(grabCoffees.map(coff => coff.ingredients.includes("Coffee")))
     return (
 
         <div className="min-h-screen w-2/3 mx-auto">
