@@ -8,8 +8,8 @@ export default async function Drinkoftheday() {
   if (!drink) return <h1>Loading...</h1>
   return (
     <div className=' text-black flex flex-col lg:flex-row items-center justify-around min-h-screen gap-4 '>
-      <div className=' lg:p-8'>
-        <Image alt="image" className="w-96 rounded border-black" src={drink.image} height={200} width={400} />
+      <div className=' my-auto lg:p-8'>
+        <Image alt="image" className="w-96 h-96 rounded border-black" src={drink.image} height={200} width={400} />
       </div>
       <div className='w-1/2 space-y-4 text-center py-4'>
         <h1 className='font-bold  text-3xl'>{drink.title}</h1>
