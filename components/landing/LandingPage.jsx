@@ -7,13 +7,9 @@ import Link from 'next/link'
 import Drinkoftheday from './Drinkoftheday'
 
 export default function LandingPage() {
-
-
     return (
         <div className=''>
             <Drinkoftheday />
         </div>
-
-
     )
 }
