@@ -11,12 +11,9 @@ export async function generateStaticParams() {
 }
 
 export async function fetchSingleDrink(id) {
-    const resp = await fetch(`https://api.sampleapis.com/coffee/hot/${id}`,
-        {
-            next: {
-                revalidate: 60
-            }
-        }
+    const resp = await fetch(`https://api.sampleapis.com/coffee/hot/${id}`, {
+        cache: "no-store"
+    }
     );
     return await resp.json();
 
@@ -31,10 +28,10 @@ export default async function page({ params }) {
                     <h1 className='text-3xl font-bold text-white text-center lg:text-start'>{singleDrink.title}</h1>
                 </div>
                 <div className=''>
-                    <Image alt="image" className="rounded-full h-60 w-60 lg:w-80 lg:h-80 border-black" src={singleDrink.image} height={200} width={400} />
+                    <Image priority alt="image" className="rounded-full h-60 w-60 lg:w-80 lg:h-80 border-black" src={singleDrink.image} height={200} width={400} />
                 </div>
             </div>
-            <OrderOptions drink={singleDrink} />
+            <OrderOptions />
         </div>
     )
 }
