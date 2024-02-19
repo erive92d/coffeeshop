@@ -14,7 +14,7 @@ export default async function CoffeesDisplay() {
             <div className="flex  flex-col lg:flex-row lg:flex-wrap items-center">
                 {grabCoffees ?
                     grabCoffees.map((coff) => (
-                        <Link href={`/order/${coff.id}`} className=" lg:w-1/4  flex flex-col justify-center items-center" key={coff.id}>
+                        <Link href={`/order/${coff.id}`} className=" lg:w-2/4  flex flex-col justify-center items-center" key={coff.id}>
                             <div className="text-center p-8">
                                 <Image alt="image" className="rounded-full h-60 w-60 lg:w-60 lg:h-30 border-black" src={coff.image} height={200} width={400} />
                                 <h1 className="text-xl py-2 font-light">
