@@ -1,16 +1,13 @@
 "use client"
 
 import { useQueryState } from "nuqs"
-const sizes = [
-    "large", "medium", "small"
-]
+import OrderOverview from "./OrderOverview"
 
 const options = [
     {
-        espressoShot: [
-            1, 2, 3, 4, 5
+        sizes: [
+            "Large", "Medium", "Small"
         ],
-
         addIns: [
             "No water",
             "Light water",
@@ -22,9 +19,9 @@ const options = [
             "Decaf",
             "1/2 Decaf"
         ], milk: [
-            "Whole milk",
-            "Almond milk",
-            "Oat milk"
+            "Whole",
+            "Almond",
+            "Oat"
         ]
     }
 ]
@@ -38,31 +35,28 @@ export default function OrderOptions() {
     const [roast, setRoast] = useQueryState('roast')
     const [milk, setMilk] = useQueryState('milk')
 
-
-
     return (
-        <div className="lg:w-2/3 w-96 mx-auto flex gap-6 lg:flex-row flex-col justify-between py-4">
+        <div className="lg:w-2/3 w-96 mx-auto flex gap-6 lg:flex-row flex-col justify-around py-4">
             <div className='space-y-4'>
                 <h1 className='text-2xl py-2 font-bold border-b-4'>
                     Size Options
                 </h1>
-                <div className="flex flex-col gap-2">
-                    {sizes.map((sze, index) => (
-                        <button value={sze} onClick={() => setSize(sze)} className={`btn ${size === sze ? "btn-outline text-black" : "btn-ghost"}`} key={index}>
+                <div className="flex flex-col">
+                    {options[0].sizes.map((sze, index) => (
+                        <button value={sze} onClick={() => setSize(sze)} className={`btn btn-sm ${size === sze ? "btn-outline text-black" : "btn-ghost"}`} key={index}>
                             {sze}
                         </button>
                     ))}
                 </div>
-                {/* <OrderOverview orderDetail={orderDetail} /> */}
             </div>
-            <div className="lg:w-2/3  space-y-2">
+            <div className=" space-y-2">
                 <h1 className='text-2xl py-2 font-bold border-b-4'>
                     Toppings
                 </h1>
-                <div className="lg:w-1/2 ">
+                <div className="">
                     <div>
                         <h1>Espresso Shots <span className="font-bold">{shots}</span></h1>
-                        <input onChange={(e) => setShots(e.target.value)} name="espressoShot" type="range" min={0} max="5" className="range " />
+                        <input value={shots || ''} onChange={(e) => setShots(e.target.value)} name="espressoShot" type="range" min={0} max="5" className="range " />
                     </div>
                 </div>
                 <div>
@@ -81,7 +75,15 @@ export default function OrderOptions() {
                         ))}
                     </select>
                 </div>
-            </div >
-        </div >
+            </div>
+            <div>
+                <OrderOverview
+                    size={size}
+                    shots={shots}
+                    roast={roast}
+                    milk={milk}
+                />
+            </div>
+        </div>
     )
 }
