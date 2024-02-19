@@ -14,7 +14,7 @@ export default async function Drinkoftheday() {
       <div className='w-1/2 space-y-4 text-center py-4'>
         <h1 className='font-bold  text-3xl'>{drink.title}</h1>
         <p className='font-light text-sm'>{drink.description}</p>
-        <Link href={`/order/${drink.id}`} className='btn px-4 btn-primary btn-outline text-white'>Order here</Link>
+        <Link href={`/order/${drink.id}`} className='btn px-4 btn-ghost bg-stone-600 btn-outline text-white'>Order here</Link>
       </div>
     </div >
   )

@@ -12,7 +12,7 @@ export default function OrderOverview({ size, shots, milk, roast }) {
             }
             <div className='font-light italic space-y-2 py-2'>
                 {size ?
-                    <h1>
+                    <h1 className=''>
                         {`Size ${size}`}
                     </h1>
                     : null}
