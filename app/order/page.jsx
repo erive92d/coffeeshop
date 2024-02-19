@@ -9,7 +9,7 @@ export default async function CoffeesDisplay() {
 
         <div className="min-h-screen w-2/3 mx-auto">
             <div >
-                <h1 className="text-2xl p-12 font-bold ">Coffees and Drinks</h1>
+                <h1 className="text-4xl p-8 italic font-serif text-center">Menu</h1>
             </div>
             <div className="flex  flex-col lg:flex-row lg:flex-wrap items-center">
                 {grabCoffees ?

@@ -6,7 +6,7 @@ import Link from 'next/link'
 export default function Navigation() {
 
     return (
-        <div className=' text-xl flex justify-between border-b  bg-opacity-75 px-6 py-10'>
+        <div className=' text-xl flex justify-between border-b bg-stone-700 text-white px-6 py-10'>
             <div>
                 <Link href="/" className='font-bold text-2xl lg:text-4xl'>CoffeeShop</Link>
             </div>
